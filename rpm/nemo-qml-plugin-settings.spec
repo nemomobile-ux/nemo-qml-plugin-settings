@@ -11,9 +11,10 @@ Release:    1
 Group:      System/Libraries
 License:    GPL
 URL:        https://github.com/nemomobile-ux/nemo-qml-plugins-settings
-Source0:    %{name}-%{version}.tar.bz2
+Source:    %{name}-%{version}.tar.bz2
 BuildRequires:  pkgconfig(Qt5Core)
-
+BuildRequires:  pkgconfig(Qt5Qml)
+BuildRequires:  pkgconfig(Qt5Quick)
 %description
 QML wrapper for QSettings class
 
