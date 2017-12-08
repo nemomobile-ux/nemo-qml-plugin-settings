@@ -17,9 +17,9 @@ DISTFILES = src/qmldir \
     rpm/nemo-qml-plugin-settings.spec \
     README.md
 
-target.path = /usr/lib/qt5/qml/org/nemomobile/settings/
+target.path = $$[QT_INSTALL_QML]/org/nemomobile/settings/
 INSTALLS += target
 
 qmldir.files += src/qmldir
-qmldir.path +=  /usr/lib/qt5/qml/org/nemomobile/settings/
+qmldir.path +=  $$[QT_INSTALL_QML]/org/nemomobile/settings/
 INSTALLS += qmldir
