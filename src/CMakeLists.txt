@@ -1,7 +1,11 @@
 ### Sets QT_INSTALL_QML to the directory where QML Plugins should be installed
 function(FindQtInstallQml)
+    find_program(QMAKE NAMES qmake-qt5 qmake)
+    if(NOT QMAKE)
+	message(FATAL_ERROR "qmake not found")
+    endif()
     execute_process(
-        COMMAND qmake -query QT_INSTALL_QML
+        COMMAND ${QMAKE} -query QT_INSTALL_QML
         OUTPUT_VARIABLE PROC_RESULT
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
