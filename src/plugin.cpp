@@ -34,6 +34,7 @@ public:
     void initializeEngine(QQmlEngine *, const char *uri)
     {
         Q_ASSERT(uri == QLatin1String("org.nemomobile.settings"));
+        qmlRegisterModule(uri, 1, 0);
     }
 
     void registerTypes(const char *uri)
