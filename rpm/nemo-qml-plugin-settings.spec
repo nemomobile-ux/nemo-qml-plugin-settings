@@ -1,12 +1,7 @@
 Name:       nemo-qml-plugin-settings
 
-%{!?qtc_qmake:%define qtc_qmake %qmake}
-%{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
-%{!?qtc_make:%define qtc_make make}
-%{?qtc_builddir:%define _builddir %qtc_builddir}
-
 Summary:    Nemo QML settings plugin
-Version:    0.0.1
+Version:    0.1.1
 Release:    1
 Group:      System/Libraries
 License:    GPL
@@ -16,6 +11,7 @@ BuildRequires:  cmake
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+
 %description
 QML wrapper for QSettings class
 
