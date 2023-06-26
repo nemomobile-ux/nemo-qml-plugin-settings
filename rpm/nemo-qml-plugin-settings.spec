@@ -6,7 +6,7 @@ Release:    1
 Group:      System/Libraries
 License:    GPL
 URL:        https://github.com/nemomobile-ux/nemo-qml-plugins-settings
-Source:    %{name}-%{version}.tar.bz2
+Source:     %{name}-%{version}.tar.bz2
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -19,22 +19,17 @@ QML wrapper for QSettings class
 %setup -q -n %{name}-%{version}
 
 %build
-mkdir build
-cd build
-cmake \
-	-DCMAKE_BUILD_TYPE=Debug \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DCMAKE_INSTALL_LBIDIR=%{_lib} \
-	-DCMAKE_VERBOSE_MAKEFILE=ON \
-	..
-cmake --build .
+%cmake
+%cmake_build
 
 %install
-cd build
 rm -rf %{buildroot}
-DESTDIR=%{buildroot} cmake --build . --target install =
+%cmake_install
 
 %files
 %defattr(0644,root,root,-)
 %{_libdir}/qt5/qml/org/nemomobile/settings/libnemosettings.so
 %{_libdir}/qt5/qml/org/nemomobile/settings/qmldir
+%dir %{_libdir}/qt5/qml/org
+%dir %{_libdir}/qt5/qml/org/nemomobile
+%dir %{_libdir}/qt5/qml/org/nemomobile/settings
